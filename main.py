@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S python3 -i
 
 # this allows us to use code from
 # the open-source pygame library
