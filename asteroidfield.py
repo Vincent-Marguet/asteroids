@@ -16,6 +16,10 @@ from constants import (
 
 
 class AsteroidField(pygame.sprite.Sprite):
+    """
+    AsteroidField Class to spawn Asteroid (see spawn method)
+    """
+
     edges = [
         [
             pygame.Vector2(1, 0),
@@ -44,6 +48,9 @@ class AsteroidField(pygame.sprite.Sprite):
         self.spawn_timer = 0.0
 
     def spawn(self, radius, position, velocity):
+        """
+        Spawn Asteroid by calling Asteroid Constructor
+        """
         asteroid = Asteroid(position.x, position.y, radius)
         asteroid.velocity = velocity
 
