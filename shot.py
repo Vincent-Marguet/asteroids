@@ -1,6 +1,14 @@
-#!/usr/bin/env -S python3 -i
+# access to numbers on jklm uio!/usr/bin/env -S python3 -i
 """
 This is the module for Shot class
+Shot class inherits from CircleShape class.
+
+It has these methods:
+
+- draw which overrides parent's method as intended
+
+- update which overrides parent's method as intended
+
 """
 
 import pygame
@@ -10,6 +18,10 @@ from constants import SHOT_RADIUS
 
 
 class Shot(CircleShape):
+    """
+    Shot class inherit from CircleShape
+    """
+
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
         self.x = x
@@ -18,7 +30,7 @@ class Shot(CircleShape):
 
     def draw(self, screen):
         """
-        Overrides the CircleShape draw method.
+        Override the CircleShape draw method.
         """
         pygame.draw.circle(
             surface=screen,

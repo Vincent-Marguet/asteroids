@@ -29,7 +29,7 @@ from shot import Shot
 
 class Player(CircleShape):
     """
-    Implements Player class as a Circle
+    Player class inherit from CircleShape
     """
 
     def __init__(self, x, y):

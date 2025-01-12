@@ -1,6 +1,17 @@
 #!/usr/bin/env -S python3 -i
 """
 This is the module for Asteroid class
+Asteroid class inherits from CircleShape class.
+
+It has these methods : 
+
+- draw which overrides parent's method as intended
+
+- update which overrides parent's method as intended
+
+- split which kill current asteroid 
+and spawn two new asteroid if conditions met
+
 """
 
 import random
@@ -13,7 +24,7 @@ from constants import ASTEROID_MIN_RADIUS
 
 class Asteroid(CircleShape):
     """
-    Asteroid class
+    Asteroid class inherit from CircleShape
     """
 
     container = None
