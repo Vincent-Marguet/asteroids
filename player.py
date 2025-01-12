@@ -1,3 +1,4 @@
+#!/usr/bin/env -S python3 -i
 """
 This module handles the Player class.
 Player class inherits from CircleShape class.
@@ -11,12 +12,11 @@ position.
 
 """
 
-#!/usr/bin/env -S python3 -i
 
 import pygame
 
 from circleshape import CircleShape
-from constants import PLAYER_RADIUS
+from constants import PLAYER_RADIUS, PLAYER_TURN_SPEED
 
 
 class Player(CircleShape):
@@ -45,3 +45,17 @@ class Player(CircleShape):
         Draw the Player triangle.
         """
         pygame.draw.polygon(screen, "white", self.triangle(), 2)
+
+    def rotate(self, dt):
+        """
+        Rotate Player by adding value to rotation member
+        """
+        self.rotation += PLAYER_TURN_SPEED * dt
+
+    def update(self, dt):
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_q]:
+            self.rotate(-dt)
+        if keys[pygame.K_d]:
+            self.rotate(dt)

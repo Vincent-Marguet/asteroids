@@ -1,3 +1,4 @@
+#!/usr/bin/env -S python3 -i
 """
 This module implements the CircleShape class.
 It inherits from the lib pygame, module sprite, class Sprite.
