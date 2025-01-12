@@ -4,6 +4,8 @@
 # the open-source pygame library
 # throughout this file
 
+import sys
+
 import pygame
 
 from asteroid import Asteroid
@@ -45,6 +47,10 @@ def main():
         screen.fill("black")
         for updatable in updatables:
             updatable.update(dt)
+        for asteroid in asteroids:
+            if asteroid.collision_check(player_1) is True:
+                print("Game Over!")
+                sys.exit()
         for drawable in drawables:
             drawable.draw(screen)
         pygame.display.flip()

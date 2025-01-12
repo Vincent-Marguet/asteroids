@@ -22,7 +22,6 @@ class Asteroid(CircleShape):
     def draw(self, screen):
         """
         Overrides the CircleShape draw method.
-        Draw the asteroid.
         """
         pygame.draw.circle(
             surface=screen,
@@ -33,4 +32,7 @@ class Asteroid(CircleShape):
         )
 
     def update(self, dt):
+        """
+        Override CircleShape update method.
+        """
         self.position += self.velocity * dt
