@@ -1,3 +1,15 @@
+"""
+This module implements the CircleShape class.
+It inherits from the lib pygame, module sprite, class Sprite.
+
+It has these methods:
+
+- draw which must be overriden by child class
+
+- update which must be overriden by child class
+
+"""
+
 #!/usr/bin/env python
 
 import pygame
