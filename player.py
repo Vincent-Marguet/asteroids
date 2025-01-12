@@ -18,6 +18,7 @@ import pygame
 from circleshape import CircleShape
 from constants import (
     PLAYER_RADIUS,
+    PLAYER_SHOOT_COOLDOWN,
     PLAYER_SHOOT_SPEED,
     PLAYER_SPEED,
     PLAYER_TURN_SPEED,
@@ -37,6 +38,7 @@ class Player(CircleShape):
         self.y = y
         self.radius = PLAYER_RADIUS
         self.rotation = 0
+        self.cooldown_shoot = 0
 
     def triangle(self):
         """
@@ -78,6 +80,7 @@ class Player(CircleShape):
             self.move(-dt)
         if keys[pygame.K_SPACE]:
             self.shoot()
+        self.cooldown_shoot -= dt
 
     def move(self, dt):
         """
@@ -92,7 +95,10 @@ class Player(CircleShape):
         """
         # Calculate the forward direction the player is facing
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
+        if self.cooldown_shoot > 0:
+            return
         # Position the shot at the "tip" of the triangle (player's forward direction')
         shot_position = self.position + forward * self.radius
         shot = Shot(shot_position.x, shot_position.y, SHOT_RADIUS)
         shot.velocity = forward * PLAYER_SHOOT_SPEED
+        self.cooldown_shoot = PLAYER_SHOOT_COOLDOWN
