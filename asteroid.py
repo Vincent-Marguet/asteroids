@@ -52,7 +52,8 @@ class Asteroid(CircleShape):
 
     def split(self):
         """
-        Split asteroids in two smaller if possible
+        Kill and split asteroid
+        in two smaller if possible
         """
         if self.radius <= ASTEROID_MIN_RADIUS:
             self.kill()

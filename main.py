@@ -17,7 +17,18 @@ from shot import Shot
 
 def main():
     """
-    Main function of Asteroids game
+    Main function of Asteroids game:
+
+    1) Prints info
+    2) Initialize pygame lib
+    3) Setup the clock
+    4) Create 4 groups to handle
+    multiple objects on screen
+    5) Assign a class member to each class
+    the game uses to assign objects to
+    groups created in step 4
+    6) Create a player and an asteroic field
+    7) Create the game loop
     """
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
